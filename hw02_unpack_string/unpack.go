@@ -24,6 +24,8 @@ func Unpack(s string) (string, error) {
 	}
 
 	matches := LettersCountRegexp.FindAllStringSubmatch(s, -1)
+	// fmt.Println(s + "\n")
+	// fmt.Println(matches)
 	var builder strings.Builder
 
 	for _, match := range matches {
@@ -47,22 +49,22 @@ func Unpack(s string) (string, error) {
 
 
 
-func digit_checker(symbol string) bool{
-	if _, err := strconv.Atoi(symbol); err == nil {
-		// fmt.Printf("%q looks like a number.\n", symbol)
-		return true
-	} else {
-		return false
-	}
+// func digit_checker(symbol string) bool{
+// 	if _, err := strconv.Atoi(symbol); err == nil {
+// 		// fmt.Printf("%q looks like a number.\n", symbol)
+// 		return true
+// 	} else {
+// 		return false
+// 	}
 
-}
+// }
 
-func string_to_int_conventer(s string) int{
-	i, err := strconv.Atoi(s)
-	if err != nil {
-		// handle error
-		fmt.Println(err)
-		os.Exit(2)
-	}
-	return i
-}
+// func string_to_int_conventer(s string) int{
+// 	i, err := strconv.Atoi(s)
+// 	if err != nil {
+// 		// handle error
+// 		fmt.Println(err)
+// 		os.Exit(2)
+// 	}
+// 	return i
+// }
