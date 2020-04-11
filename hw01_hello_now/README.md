@@ -27,3 +27,4 @@ exact time: <время>
 ### Подсказки
 - `log.Fatalf`
 - `t.Round`
+
