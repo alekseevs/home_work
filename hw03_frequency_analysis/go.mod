@@ -1,4 +1,4 @@
-module github.com/alekseevs/home_work/tree/hw03_frequency_analysis/hw03_frequency_analysis
+module github.com/alekseevs/home_work/hw03_frequency_analysis
 
 go 1.14
 
