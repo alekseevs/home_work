@@ -2,7 +2,6 @@ package hw03_frequency_analysis //nolint:golint,stylecheck
 import (
 	"sort"
 	"strings"
-	"fmt"
 )
 
 const WordsReturn = 10
@@ -18,7 +17,7 @@ func Top10(s string) []string {
 		Value int
 	}
 	ss := make([]kv, 100)
-	result := make([]string,0)
+	result := make([]string, 0)
 	counts := make(map[string]int)
 
 	s = strings.ReplaceAll(s, "\n", " ")
@@ -47,7 +46,6 @@ func Top10(s string) []string {
 
 	for _, kv := range ss[:WordsReturn] {
 		result = append(result, kv.Key)
-		fmt.Println(len(result))
 	}
 	return result
 }
