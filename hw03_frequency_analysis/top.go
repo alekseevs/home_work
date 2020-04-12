@@ -2,20 +2,25 @@ package hw03_frequency_analysis //nolint:golint,stylecheck
 import (
 	"sort"
 	"strings"
+	"fmt"
 )
 
 const WordsReturn = 10
 
 // Top10 fucn retunr top10 words in s
 func Top10(s string) []string {
+	if s == "" {
+		result := make([]string, 0)
+		return result
+	}
 	type kv struct {
 		Key   string
 		Value int
 	}
 	ss := make([]kv, 100)
-	result := make([]string, 10)
-
+	result := make([]string,0)
 	counts := make(map[string]int)
+
 	s = strings.ReplaceAll(s, "\n", " ")
 	s = strings.ReplaceAll(s, "\t", " ")
 
@@ -33,7 +38,6 @@ func Top10(s string) []string {
 			counts[word] = 1
 		}
 	}
-
 	for k, v := range counts {
 		ss = append(ss, kv{k, v})
 	}
@@ -41,12 +45,9 @@ func Top10(s string) []string {
 		return ss[i].Value > ss[j].Value
 	})
 
-	for _, kv := range ss {
-		// fmt.Printf("%s, %d\n", kv.Key, kv.Value)
+	for _, kv := range ss[:WordsReturn] {
 		result = append(result, kv.Key)
-		if len(result) >= WordsReturn {
-			break
-		}
+		fmt.Println(len(result))
 	}
 	return result
 }
